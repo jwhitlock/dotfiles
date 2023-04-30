@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+brew "ack"
+brew "black", restart_service: true, link: false
+brew "chezmoi"
+brew "fish"
+brew "gnupg"
+brew "hub"
+brew "macvim"
+brew "magic-wormhole"
+brew "pinentry-mac"
+brew "pyenv"
+brew "rust"
+brew "wget"
+cask "keybase"
+cask "shiftit"
+cask "sourcetree"
+EOF
