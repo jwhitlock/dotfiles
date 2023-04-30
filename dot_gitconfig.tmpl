@@ -1,0 +1,33 @@
+[alias]
+	st = status
+	co = checkout
+	force-push = push --force
+	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+[user]
+	name = John Whitlock
+	email = {{ .github.email }}
+	signingkey = {{ .github.signingkey }}
+[core]
+	editor = /usr/bin/vim
+	excludesfile = {{ .chezmoi.homeDir }}.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
+[gpg]
+	program = gpg
+[pull]
+	ff = only
+[commit]
+	gpgsign = true
+	noverify = true
+[init]
+	defaultBranch = main
+[submodule]
+	recurse = true
+[diff]
+	submodule = log
