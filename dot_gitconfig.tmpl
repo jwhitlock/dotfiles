@@ -9,7 +9,7 @@
 	signingkey = {{ .github.signingkey }}
 [core]
 	editor = /usr/bin/vim
-	excludesfile = {{ .chezmoi.homeDir }}.gitignore_global
+	excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
