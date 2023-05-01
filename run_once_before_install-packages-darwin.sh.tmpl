@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+
 brew "ack"
 brew "black", restart_service: true
 brew "chezmoi"
@@ -15,12 +16,14 @@ brew "macvim"
 brew "magic-wormhole"
 brew "pinentry-mac"
 brew "pyenv"
+brew "python3"
 brew "rust"
 brew "wget"
+
+cask "1password"
+cask "1password-cli"
 cask "keybase"
 cask "shiftit"
 cask "sourcetree"
-cask "1password"
-cask "1password-cli"
 EOF
 {{ end -}}
