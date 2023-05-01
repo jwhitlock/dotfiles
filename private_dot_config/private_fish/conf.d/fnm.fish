@@ -1,2 +1,4 @@
 # https://github.com/Schniz/fnm
-fnm env | source
+if test -x /opt/homebrew/bin/fnm
+  fnm env | source
+end
