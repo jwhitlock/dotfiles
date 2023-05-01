@@ -1,5 +1,6 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
+set -e
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -27,10 +28,22 @@ cask "firefox"
 cask "keybase"
 cask "marked"
 cask "omnifocus"
+cask "rescuetime"
 cask "shiftit"
 cask "slack"
 cask "sourcetree"
 cask "textexpander"
+
+{{- if .forMozilla }}
+cask "element"
+cask "google-chrome"
+cask "reflector"
+cask "zoom"
+{{- end }}
+
+{{- if .forPersonal }}
+
+{{- end }}
 EOF
 
 # Use App Store
