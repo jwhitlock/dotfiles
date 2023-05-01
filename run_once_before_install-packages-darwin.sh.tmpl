@@ -1,5 +1,5 @@
 {{- if eq .chezmoi.os "darwin" -}}
-#!/bin/sh
+#!/bin/bash
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -22,7 +22,6 @@ brew "wget"
 
 cask "1password"
 cask "1password-cli"
-cask "daisydisk"
 cask "docker"
 cask "firefox"
 cask "keybase"
@@ -31,7 +30,15 @@ cask "omnifocus"
 cask "shiftit"
 cask "slack"
 cask "sourcetree"
-cask "synalyze-it-pro"
 cask "textexpander"
 EOF
+
+# Use App Store
+function uninstall {
+  brew uninstall --cask $1 || echo "👍 $1 not brew installed"
+}
+
+uninstall daisydisk
+uninstall soulver
+uninstall synalyze-it-pro
 {{ end -}}
