@@ -1,0 +1,4 @@
+[".vim/bundle/Vundle.vim"]
+  type = "git-repo"
+  url = "https://github.com/VundleVim/Vundle.vim.git"
+  refreshPeriod = "24h"
