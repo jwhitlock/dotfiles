@@ -6,7 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 brew "ack"
-brew "black", restart_service: true, link: false
+brew "black", restart_service: true
 brew "chezmoi"
 brew "fish"
 brew "gnupg"
@@ -20,5 +20,7 @@ brew "wget"
 cask "keybase"
 cask "shiftit"
 cask "sourcetree"
+cask "1password"
+cask "1password-cli"
 EOF
 {{ end -}}
