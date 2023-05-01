@@ -1,6 +1,8 @@
 {{- $github_email := promptStringOnce . "github.email" "GitHub Email adddress" "286017+jwhitlock@users.noreply.github.com" -}}
 {{- $github_signingkey := promptStringOnce . "github.signingkey" "GitHub Signing Key" "082C735D154FB750" -}}
 
+[cd]
+    command = "fish"
 
 [data.github]
     email = {{ $github_email | quote }}
