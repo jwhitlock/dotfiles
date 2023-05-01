@@ -7,12 +7,20 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+{{- if .forMozilla }}
+tap "heroku/brew"
+{{- end }}
+
+{{- if .forPersonal }}
+{{- end }}
+
 brew "ack"
 brew "black"
 brew "chezmoi"
 brew "fish"
 brew "gnupg"
 brew "hub"
+brew "jq"
 brew "macvim"
 brew "magic-wormhole"
 brew "pinentry-mac"
@@ -20,6 +28,19 @@ brew "pyenv"
 brew "python3"
 brew "rust"
 brew "wget"
+
+{{- if .forMozilla }}
+# fx-private-relay
+brew "circleci"
+brew "heroku/brew/heroku"
+brew "postgresql@14"
+brew "redis"
+brew "telnet"
+brew "volta"
+{{- end }}
+
+{{- if .forPersonal }}
+{{- end }}
 
 cask "1password"
 cask "1password-cli"
@@ -46,7 +67,8 @@ cask "zoom"
 {{- end }}
 EOF
 
-# Use App Store
+echo "Uninstalling homebrew casks, prefer App Store"
+
 function uninstall {
   brew uninstall --cask $1 || echo "👍 $1 not brew installed"
 }
