@@ -57,6 +57,7 @@ filetype plugin indent on       "Loads filetype detection and all installed plug
 syntax on                   "Use sytax highlighting
 set modeline                "Allow modelines in files to override settings
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
 
 "Indenting and tabs
