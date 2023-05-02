@@ -30,7 +30,6 @@ if status is-interactive
     end
 
     if test -x "$HOMEBREW_PREFIX/bin/pyenv"
-      "$HOMEBREW_PREFIX/bin/pyenv" init --path | source
       "$HOMEBREW_PREFIX/bin/pyenv" init - | source
     end
 
