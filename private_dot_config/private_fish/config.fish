@@ -1,8 +1,5 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
-  set -gx VISUAL mvim
-  set -gx EDITOR vim
-
   if test -x /opt/homebrew/bin/brew
     # MacOS, ARM
     set -gx HOMEBREW_PREFIX "/opt/homebrew"
@@ -36,6 +33,10 @@ if status is-interactive
       "$HOMEBREW_PREFIX/bin/pyenv" init --path | source
       "$HOMEBREW_PREFIX/bin/pyenv" init - | source
     end
+
+    set -gx VISUAL "$HOMEBREW_PREFIX/bin/mvim --nofork"
+    set -gx EDITOR "$HOMEBREW_PREFIX/bin/mvim -v --nofork"
+
   end
 
   if test -x "$HOMEBREW_PREFIX/bin/volta"
