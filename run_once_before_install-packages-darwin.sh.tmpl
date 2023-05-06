@@ -65,17 +65,32 @@ cask "zoom"
 {{- end }}
 
 {{- if .forPersonal }}
+cask "minecraft"
+cask "origin"
+cask "steam"
+cask "superduper"
+{{- end }}
 
+{{- if .forFamilyComputer }}
+cask "audacity"
+cask "epic-games"
+cask "handbrake"
+cask "metaz"
+cask "ubiquiti-unifi-controller"
+cask "unity"
+cask "unity-webgl-support-for-editor"
+cask "vlc"
 {{- end }}
 EOF
 
-echo "Uninstalling homebrew casks, prefer App Store"
+# echo "Uninstalling homebrew casks, prefer App Store"
 
 function uninstall {
   brew uninstall --cask $1 || echo "👍 $1 not brew installed"
 }
 
-uninstall daisydisk
-uninstall soulver
-uninstall synalyze-it-pro
+# uninstall daisydisk
+# uninstall soulver
+# uninstall synalyze-it-pro
+
 {{ end -}}
