@@ -11,7 +11,7 @@
     forPersonal = {{ $forPersonal }}
 
 {{- $github_email := promptStringOnce . "github.email" "GitHub Email adddress" "286017+jwhitlock@users.noreply.github.com" -}}
-{{- $github_signingkey := promptStringOnce . "github.signingkey" "GitHub Signing Key" "082C735D154FB750" }}
+{{- $github_signingkey := promptStringOnce . "github.signingkey" "GitHub Signing Key" "22E44A90025A75DB" }}
 
 [data.github]
     email = {{ $github_email | quote }}
