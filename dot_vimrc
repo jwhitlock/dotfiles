@@ -57,6 +57,7 @@ filetype plugin indent on       "Loads filetype detection and all installed plug
 syntax on                   "Use sytax highlighting
 set modeline                "Allow modelines in files to override settings
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal textwidth=88
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
 
@@ -77,6 +78,7 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 "Markdown
 let g:vim_markdown_folding_disabled=1   "Disable folding
 set nofoldenable
+autocmd FileType markdown setlocal textwidth=88
 
 "au BufNewFile,BufRead *.ejs set filetype=html
 
