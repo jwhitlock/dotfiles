@@ -10,8 +10,13 @@ set shell=sh
 "Vundle
 set nocompatible                    "Don't try to be compatible with vi
 filetype off                        "Needed for vundle
-set rtp+=~/.vim/bundle/Vundle.vim   "Add vundle to path
-call vundle#begin()
+if has('nvim')
+  set rtp+=~/.config/nvim/bundle/Vundle.vim
+  call vundle#begin("~/.config/nvim/bundle")
+else
+  set rtp+=~/.vim/bundle/Vundle.vim   "Add vundle to path
+  call vundle#begin()
+endif 
     "vundle itself
 Plugin 'VundleVim/Vundle.vim'
     "Project-wide searching
@@ -52,6 +57,8 @@ Plugin 'chrisbra/unicode.vim'
 call vundle#end()
 filetype plugin indent on       "Loads filetype detection and all installed plugins
 
+"Never dark please
+set background=light
 
 "File-specific handling
 syntax on                   "Use sytax highlighting
@@ -59,7 +66,6 @@ set modeline                "Allow modelines in files to override settings
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal textwidth=88  "Use black 88 column for gq"
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
-
 
 "Indenting and tabs
 set expandtab               "When inserting tabs, use spaces instead
@@ -108,13 +114,11 @@ set noerrorbells         " don't beep"
 set list
 set listchars=tab:>_,trail:_,extends:#,nbsp:_
 
-
 "Mouse
 if !has('nvim')
   set mouse=a                 "Enable mouse for all modes
   set ttymouse=xterm2         "Use xterm2 protocol, reporting mouse position while dragging
 endif
-
 
 "More like textmate
 set autoread                "Detect and reload files changed on disk
@@ -146,51 +150,8 @@ let g:syntastic_python_flake8_args = "--config=.flake8"
 let mapleader="\\"
 nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
-nmap <silent> <leader>N :NERDTree<CR>
-nmap <silent> <leader>ipdb iimport ipdb; ipdb.set_trace()<CR><Esc>:w<CR>
 nmap <silent> <leader>pdb iimport pdb; pdb.set_trace()<CR><Esc>:w<CR>
-nmap <silent> <leader>xipdb :g/^\s*import ipdb; ipdb.set_trace()$/d<CR><Esc>:w<CR>
 cmap w!! w !sudo tee > /dev/null %
-
-"Disable arrow keys so I'll learn
-function! NoArrows()
-    noremap  <Up> ""
-    noremap! <Up> <Esc>
-    noremap  <Down> ""
-    noremap! <Down> <Esc>
-    noremap  <Left> ""
-    noremap! <Left> <Esc>
-    noremap  <Right> ""
-    noremap! <Right> <Esc>
-endfunction
-"call NoArrows()
-
-function! YesArrows()
-    unmap  <Up>
-    unmap! <Up>
-    unmap  <Down>
-    unmap! <Down>
-    unmap  <Left>
-    unmap! <Left>
-    unmap  <Right>
-    unmap! <Right>
-endfunction
-
-"https://github.com/macvim-dev/macvim/wiki/Python-2.x-and-Python-3.x
-function! s:py3_test()
-    py3 import time
-    py3 from ctypes import *
-    py3 lib = cdll.LoadLibrary("/usr/lib/libc.dylib")
-    py3 print(time.ctime(lib.time(0)))
-endfunction
-function! s:py_test()
-    py import time
-    py from ctypes import *
-    py lib = cdll.LoadLibrary("/usr/lib/libc.dylib")
-    py print(time.ctime(lib.time(0)))
-endfunction
-"call s:py3_test()
-"call s:py_test()
 
 "vim-go
 let g:go_def_mode='gopls'
