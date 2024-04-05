@@ -1,13 +1,5 @@
-set shell=sh
-"This was needed for python/black plugin, but 'brew install black' worked
-"set pythonthreehome="/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8"
-"set pythonthreedll="/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/libpython3.8.dylib"
-"set pythonthreehome=/usr/local/opt/python@3.7/Frameworks/Python.framework/Versions/3.7/
-"set pythonthreedll=/usr/local/opt/python@3.7/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib
-"set pythonthreehome=/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/
-"set pythonthreedll=/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/libpython3.9.dylib
-
 "Vundle
+set shell=sh
 set nocompatible                    "Don't try to be compatible with vi
 filetype off                        "Needed for vundle
 if has('nvim')
@@ -16,42 +8,58 @@ if has('nvim')
 else
   set rtp+=~/.vim/bundle/Vundle.vim   "Add vundle to path
   call vundle#begin()
-endif 
-    "vundle itself
+endif
+
+"vundle itself
 Plugin 'VundleVim/Vundle.vim'
-    "Project-wide searching
+
+"Project-wide searching
 Bundle 'mileszs/ack.vim'
-    "Folder navigator
+
+"Folder navigator
 Bundle 'scrooloose/nerdtree'
-    "Tab completion
+
+"Tab completion
 Bundle 'ervandew/supertab'
-    "Open files by name
-Bundle 'kien/ctrlp.vim'
-    "CVS/SVN/SVK/git/hg/bzr integration plugin
-Bundle 'vcscommand.vim'
-    "syntax checker"
+
+"Open files by name
+"Bundle 'kien/ctrlp.vim'
+
+"CVS/SVN/SVK/git/hg/bzr integration plugin
+"Bundle 'vcscommand.vim'
+
+"syntax checker
 Bundle 'scrooloose/syntastic'
-    "Dash documentation lookup"
-Bundle 'rizzatti/dash.vim'
+
+"Dash documentation lookup"
+"Bundle 'rizzatti/dash.vim'
+
+" Syntax highlighting for markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-    "EJS highlighting"
-"Bundle 'briancollins/vim-jst'
-    "EditorConfig
+
+"EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
-    "Go Language Editing"
-Plugin 'fatih/vim-go'
-    "sh/bash linting"
+
+"Go Language Editing"
+"Plugin 'fatih/vim-go'
+
+"sh/bash linting"
 Plugin 'itspriddle/vim-shellcheck'
-    "Open in Marked 2
+
+"Open in Marked 2
 Plugin 'itspriddle/vim-marked'
-    "Javascript support"
+
+"Javascript support"
 Plugin 'pangloss/vim-javascript'
-    "Black Python formatting"
+
+"Black Python formatting"
 Plugin 'psf/black'
-    "Rust syntax"
+
+"Rust syntax"
 Plugin 'rust-lang/rust.vim'
-    "UnicodeSearch, others"
+
+"UnicodeSearch, others"
 Plugin 'chrisbra/unicode.vim'
 
 call vundle#end()
@@ -59,6 +67,7 @@ filetype plugin indent on       "Loads filetype detection and all installed plug
 
 "Never dark please
 set background=light
+colorscheme macvim
 
 "File-specific handling
 syntax on                   "Use sytax highlighting
