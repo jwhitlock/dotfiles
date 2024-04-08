@@ -67,7 +67,7 @@ filetype plugin indent on       "Loads filetype detection and all installed plug
 
 "Never dark please
 set background=light
-colorscheme macvim
+silent! colorscheme! macvim  "Load if available, or fail silently (command-line vim)
 
 "File-specific handling
 syntax on                   "Use sytax highlighting
