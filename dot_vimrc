@@ -16,8 +16,10 @@ Plugin 'VundleVim/Vundle.vim'
 "Project-wide searching
 Bundle 'mileszs/ack.vim'
 
-"Folder navigator
-Bundle 'scrooloose/nerdtree'
+if !exists("g:gui_vimr")
+  "Folder navigator
+  Bundle 'scrooloose/nerdtree'
+end
 
 "Tab completion
 Bundle 'ervandew/supertab'
