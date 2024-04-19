@@ -47,6 +47,10 @@ if status is-interactive
   if test -f "$HOME/google-cloud-sdk/path.fish.inc"
     . "$HOME/google-cloud-sdk/path.fish.inc"
   end
+
+  if test -x "$HOMEBREW_PREFIX/bin/starship"
+    starship init fish | source
+  end
 end
 
 fish_add_path --append "$HOME/.local/bin"

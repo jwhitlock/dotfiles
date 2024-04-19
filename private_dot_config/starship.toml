@@ -1,0 +1,31 @@
+[aws]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = "🌱 "
+ignore_branches = ["main"]
+
+[git_status]
+format = '([\[git status $all_status$ahead_behind\]]($style) )'
+
+[nodejs]
+symbol = "⬢ "
+format = 'with [$symbol($version )]($style)'
+
+
+[python]
+symbol = "🐍 "
+format = 'with [${symbol}${pyenv_prefix}(${version})( \(vf $virtualenv\) )]($style) '
+
+[status]
+disabled = false
+
+[time]
+disabled = false
+format = '🕙 [$time]($style) '
