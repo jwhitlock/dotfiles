@@ -24,7 +24,7 @@ format = 'with [$symbol($version )]($style)'
 
 [python]
 symbol = "🐍 "
-format = 'with [${symbol}${pyenv_prefix}(${version})( \(vf $virtualenv\) )]($style) '
+format = 'with [${symbol}${pyenv_prefix}(${version})( \(vf $virtualenv\) )]($style)'
 
 [status]
 disabled = false
