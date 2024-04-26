@@ -154,8 +154,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-let g:syntastic_python_checkers = ['flake8', 'mypy', 'ruff']
+let g:syntastic_python_checkers = ['mypy', 'ruff']
 let g:syntastic_python_flake8_args = "--config=.flake8"
+
+"Run black on save
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
 
 "Macro stuff
 let mapleader="\\"
