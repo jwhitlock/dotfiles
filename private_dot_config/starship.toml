@@ -1,3 +1,5 @@
+command_timeout = 2000  # ms
+
 [directory]
 fish_style_pwd_dir_length = 1
 
@@ -20,7 +22,6 @@ format = '([\[git status $all_status$ahead_behind\]]($style) )'
 [nodejs]
 symbol = "⬢ "
 format = 'with [$symbol($version )]($style)'
-
 
 [python]
 symbol = "🐍 "
