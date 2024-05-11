@@ -2,6 +2,9 @@
 #!/bin/bash
 set -e
 brew bundle --no-lock --file=/dev/stdin <<EOF
+#
+# Taps
+#
 tap "homebrew/bundle"
 tap "homebrew/services"
 
@@ -12,9 +15,13 @@ tap "heroku/brew"
 {{- if .forPersonal }}
 {{- end }}
 
+#
+# Brews
+#
 brew "ack"
 brew "black"
 brew "chezmoi"
+brew "dos2unix"
 brew "fish"
 brew "gnupg"
 brew "hub"
@@ -31,6 +38,15 @@ brew "starship"
 brew "rust"
 brew "wget"
 
+# Neovim
+brew "neovim"
+brew "composer"
+brew "fd"
+brew "julia"
+brew "luarocks"
+brew "openjdk"
+brew "ripgrep"
+
 {{- if .forMozilla }}
 # fx-private-relay
 brew "circleci"
@@ -39,11 +55,18 @@ brew "postgresql@14"
 brew "redis"
 brew "telnet"
 brew "volta"
+
+# sre
+brew "awscli"
+brew "helm"
 {{- end }}
 
 {{- if .forPersonal }}
 {{- end }}
 
+#
+# Casks
+#
 cask "1password"
 cask "1password-cli"
 cask "docker"
@@ -56,6 +79,7 @@ cask "shiftit"
 cask "slack"
 cask "sourcetree"
 cask "textexpander"
+cask "vimr"
 
 {{- if .forMozilla }}
 cask "element"
@@ -94,5 +118,8 @@ function uninstall {
 # uninstall daisydisk
 # uninstall soulver
 # uninstall synalyze-it-pro
+
+uninstall unity
+uninstall unity-webgl-support-for-editor
 
 {{ end -}}
