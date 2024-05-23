@@ -17,7 +17,7 @@ symbol = "🌱 "
 ignore_branches = ["main"]
 
 [git_status]
-format = '([\[git status $all_status$ahead_behind\]]($style) )'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 
 [nodejs]
 symbol = "⬢ "
