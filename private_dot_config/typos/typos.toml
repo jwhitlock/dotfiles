@@ -1,0 +1,2 @@
+[default.extend-identifiers]
+email_for_dne_subdomain = "email_for_dne_subdomain"

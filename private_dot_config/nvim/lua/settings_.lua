@@ -1,3 +1,6 @@
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
+
 local opt = vim.opt
 
 opt.secure = true -- limit commands .nvimrc can run
@@ -19,8 +22,7 @@ opt.termguicolors = vim.fn.has("termguicolors") == 1 and true or false
 if vim.g.gui_vimr
 then
   -- VimR config
-  opt.background=light
-  vim.cmd 'colorscheme zellner'
+  opt.background="light"
 end
-
+vim.cmd 'colorscheme zellner'
 vim.cmd 'filetype plugin indent on'
