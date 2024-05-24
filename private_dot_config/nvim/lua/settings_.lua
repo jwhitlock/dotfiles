@@ -14,6 +14,13 @@ opt.tabstop = 4 -- 4 spaces for tabs
 
 opt.cursorline = true
 opt.number = true
-opt.termguicolors = true
+opt.termguicolors = vim.fn.has("termguicolors") == 1 and true or false
 
-vim.cmd('filetype plugin indent on') -- enable filetype detection and fieltype specific plugins and indents
+if vim.g.gui_vimr
+then
+  -- VimR config
+  opt.background=light
+  vim.cmd 'colorscheme zellner'
+end
+
+vim.cmd 'filetype plugin indent on'
