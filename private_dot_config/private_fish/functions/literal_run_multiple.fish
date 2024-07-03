@@ -15,7 +15,7 @@ function run_multiple --description 'Run a command multiple times'
     end
 
     if test "$print_help" -eq 1;
-        echo "run_multiple [-h|--help] [-r|runs #] [--forever] [-f|--fails #] [COMMAND ...]"
+        echo "run_multiple [-h|--help] [-r|runs #] [--forever] [-f|--fails #] -- [COMMAND ...]"
         echo ""
         echo "Arguments:"
         echo "  runs - Run this many times, default run 10 times"
