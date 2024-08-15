@@ -8,7 +8,7 @@
 -- https://luals.github.io/
 --
 --- Python - pylsp
--- https://github.com/python-lsp/python-lsp-serve
+-- https://github.com/python-lsp/python-lsp-server
 --
 --- Spelling - typos_lsp
 -- https://github.com/crate-ci/typos
@@ -31,9 +31,11 @@ return {
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
-
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
+
+    -- For workaround
+    'nvim-lua/plenary.nvim',
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.
@@ -127,6 +129,7 @@ return {
         end
       end,
     })
+
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -159,7 +162,9 @@ return {
           },
         },
       },
-      pylsp = {},
+      pylsp = {
+        settings = {},
+      },
       typos_lsp = {
         init_options = {
           config = '~/.config/typos/typos.toml',
@@ -168,6 +173,40 @@ return {
       taplo = {},
     }
 
+    --- Install python-lsp-server plugins in the same environment
+    --- https://github.com/williamboman/mason-lspconfig.nvim/issues/58#issuecomment-1521738021
+    local mason_post_install = function(pkg)
+      if pkg.name ~= 'python-lsp-server' then
+        return
+      end
+
+      local venv = vim.fn.stdpath 'data' .. '/mason/packages/python-lsp-server/venv'
+      local job = require 'plenary.job'
+
+      job
+        :new({
+          command = venv .. '/bin/pip',
+          args = {
+            'install',
+            '-U',
+            '--disable-pip-version-check',
+            'pylsp-rope',
+            'python-lsp-black',
+            'pylsp-mypy',
+            'python-lsp-ruff',
+          },
+          cwd = venv,
+          env = { VIRTUAL_ENV = venv },
+          on_exit = function()
+            print 'Finished installing pylsp modules.'
+          end,
+          on_start = function()
+            print 'Installing pylsp modules...'
+          end,
+        })
+        :start()
+    end
+
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
@@ -175,6 +214,7 @@ return {
     --
     --  You can press `g?` for help in this menu.
     require('mason').setup()
+    require('mason-registry'):on('package:install:success', mason_post_install)
 
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
