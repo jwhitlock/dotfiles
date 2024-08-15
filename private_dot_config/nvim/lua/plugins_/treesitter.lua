@@ -1,3 +1,6 @@
+-- Incremental parsing of buffers
+-- https://tree-sitter.github.io/tree-sitter/
+
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",

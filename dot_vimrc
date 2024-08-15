@@ -158,6 +158,7 @@ let g:syntastic_python_checkers = ['mypy', 'ruff']
 let g:syntastic_python_flake8_args = "--config=.flake8"
 
 "Run black on save
+"let g:black_use_virtualenv
 augroup black_on_save
   autocmd!
   autocmd BufWritePre *.py Black

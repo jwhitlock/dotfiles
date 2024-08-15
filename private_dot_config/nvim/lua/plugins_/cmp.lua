@@ -12,8 +12,8 @@ return {
                 end
             },
             window = {
-                -- completion = cmp.config.window.bordered(),
-                -- documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -31,10 +31,11 @@ return {
 
         end,
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp', -- lsp completions
         'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- LuaSnip support
-        'hrsh7th/cmp-buffer',  -- buffer completions
-        'hrsh7th/cmp-path',    -- path completions
+        'hrsh7th/cmp-buffer',  -- complete from the current buffer
         'hrsh7th/cmp-cmdline', -- cmdline completions
+        'hrsh7th/cmp-nvim-lsp', -- lsp completions
+        'hrsh7th/cmp-nvim-lua', -- complete lua code
+        'hrsh7th/cmp-path',    -- complete with file names
     },
 }
