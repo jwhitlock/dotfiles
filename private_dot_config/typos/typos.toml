@@ -1,2 +1,12 @@
 [default.extend-identifiers]
 email_for_dne_subdomain = "email_for_dne_subdomain"
+
+[default]
+extend-ignore-re = [
+  # nvim doc strings
+  " \\[[sS]\\]tage ",
+  "'\\[S\\]earch[' ]",
+  " \\[[I]\\]nner ",
+  " \\[R\\]eferences'",
+  " \\[S\\]ymbols'",
+]

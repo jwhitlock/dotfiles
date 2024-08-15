@@ -19,12 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
   spec = {
     { import = 'plugins_' },
-    require 'kickstart.plugins.debug',
-    require 'kickstart.plugins.indent_line',
-    require 'kickstart.plugins.lint',
-    require 'kickstart.plugins.autopairs',
-    require 'kickstart.plugins.neo-tree',
-    require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+    -- require 'kickstart.plugins.debug',
+    -- require 'kickstart.plugins.indent_line',
+    -- require 'kickstart.plugins.lint',
+    -- require 'kickstart.plugins.autopairs',
+    -- require 'kickstart.plugins.neo-tree',
+    -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   },
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
