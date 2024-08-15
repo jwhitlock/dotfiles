@@ -10,6 +10,8 @@ require 'lazy_' -- Load plugins
 --
 -- jsatt's config
 --  https://github.com/jsatt/dotfiles/tree/master/dot_config/nvim
+-- WillKG's config (older)
+-- https://github.com/willkg/dotfiles/blob/main/dotfiles/.config/nvim/init.vim
 -- Jack Smith - Setting up Neovim Tree-sitter and Built-in LSP
 --  https://medium.com/@finnala/setting-up-neovim-tree-sitter-and-built-in-lsp-86a853d70590
 -- TJ DeVries - The Only Video You Need to Get Started with Neovim
