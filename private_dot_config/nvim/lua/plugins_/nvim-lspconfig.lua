@@ -127,6 +127,50 @@ return {
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
           end, '[T]oggle Inlay [H]ints')
         end
+
+        -- Update pylsp configuration for virtualenv
+        if client and client.name == 'pylsp' then
+          local logger = require 'venv-selector.logger'
+          local vs = require 'venv-selector'
+          local py_path = vs and vs.python() or nil
+          local v_path = vs and vs.venv() or nil
+          logger.info 'Starting LspAttach event for pylsp...'
+          if not (v_path and py_path) then
+            logger.info(' abort, venv_path=' .. (v_path or 'nil') .. ' and python_path=' .. (py_path or 'nil'))
+          else
+            logger.info(' old settings: ' .. vim.fn.json_encode(client.settings))
+            local overrides = {
+              pylsp = {
+                plugins = {
+                  jedi = { environment = py_path },
+                  ruff = { executable = vim.fs.joinpath(v_path, 'bin', 'ruff') },
+                  mypy = {
+                    overrides = { '--python-executable', py_path, true },
+                  },
+                },
+              },
+            }
+            local new_plug = overrides.pylsp.plugins
+            local old_plug = client.settings.pylsp.plugins
+            if
+              old_plug.jedi
+              and new_plug.jedi.environment == old_plug.jedi.environment
+              and old_plug.ruff
+              and new_plug.ruff.executable == old_plug.ruff.executable
+              and old_plug.mypy
+              and old_plug.mypy.overrides
+              and new_plug.mypy.overrides[2] == old_plug.mypy.overrides[2]
+            then
+              logger.info ' no changes to settings'
+            else
+              local new_settings = vim.tbl_deep_extend('force', client.settings, overrides)
+              logger.info(' new setting:' .. vim.fn.json_encode(new_settings))
+              client.notify('workspace/didChangeConfiguration', { settings = new_settings })
+              client.settings = new_settings
+              logger.info ' done!'
+            end
+          end
+        end
       end,
     })
 
@@ -163,7 +207,28 @@ return {
         },
       },
       pylsp = {
-        settings = {},
+        -- Debug variant
+        -- cmd = { 'pylsp', '-vvv', '--log-file', '/tmp/lsp.log' },
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false },
+              mccabe = { enabled = false },
+              pycodestyle = { enabled = false },
+              pydocstyle = { enabled = false },
+              autopep8 = { enabled = false },
+              yapf = { enabled = false },
+              flake8 = { enabled = false },
+              pylint = { enabled = false },
+              black = { enabled = true },
+              mypy = { enabled = true },
+              ruff = {
+                enabled = true,
+                formatEnabled = false,
+              },
+            },
+          },
+        },
       },
       typos_lsp = {
         init_options = {
