@@ -2,8 +2,52 @@
 # https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 # https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#ignore-files-or-a-directory-on-different-machines
 
+.config/chezmoi  # Protected anyway
 .config/nvim/lazy-lock.json
+.config/mozilla
 
-# For the GitHub repo
-#README.md
-#LICENSE
+# Don't manage these in the home folder
+.CFUserTextEncoding
+.DS_Store
+.Trash
+.bash_history
+.cache
+.cups
+.docker
+.lesshst
+.local
+.npm
+.pyenv
+.python_history
+.ssh
+.viminfo
+.virtualenvs
+.vscode
+.wget-hsts
+.zsh_history
+.zsh_sessions
+Applications
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+SynologyDrive
+windows
+
+# Only manage the agent config
+.gnupg/*
+!.gnupg/gpg-agent.conf
+
+# Ensure created, but don't manage folders
+src/*
+!src/.keep
+
+
+# Don't sync these in the chezmoi folder
+# This means exclusion patterns will be needed to track these in subfolders
+README.md
+LICENSE
