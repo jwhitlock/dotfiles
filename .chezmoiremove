@@ -1,3 +1,4 @@
 .config/nvim/lua/plugins_/cmp.lua
 .config/nvim/lua/plugins_/lsp.lua
 .config/nvim/lua/plugins_/treesitter.lua
+.config/nvim/lua/autocommands_.lua

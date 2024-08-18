@@ -6,7 +6,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 local opt = vim.opt
 
 -- Make line numbers default
@@ -61,11 +61,33 @@ opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
 
+-- auto-read if file has changed outside vim but not inside
+opt.autoread = true
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+  desc = 'Check if the file changed on disk',
+  group = vim.api.nvim_create_augroup('jw-autoreload', { clear = true }),
+  callback = function()
+    if vim.api.nvim_get_mode().mode ~= 'c' then
+      vim.cmd 'checktime'
+    end
+  end,
+})
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Older config
 --[[
 opt.secure = true -- limit commands .nvimrc can run
 opt.autoindent = true -- copy indent from current line when starting new line
-opt.autoread = true -- auto-read if file has changed outside vim but not inside
 opt.expandtab = true -- use spaces instead of tabs
 opt.history = 1000 -- remember the last 1000 commands used
 opt.hlsearch = true -- highlight matches when searching

@@ -222,10 +222,7 @@ return {
               pylint = { enabled = false },
               black = { enabled = true },
               mypy = { enabled = true },
-              ruff = {
-                enabled = true,
-                formatEnabled = false,
-              },
+              ruff = { enabled = true },
             },
           },
         },

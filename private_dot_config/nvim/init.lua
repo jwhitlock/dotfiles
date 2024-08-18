@@ -2,7 +2,6 @@
 
 require 'settings_'
 require 'keymaps_'
-require 'autocommands_'
 require 'lazy_' -- Load plugins
 
 ---
@@ -19,6 +18,5 @@ require 'lazy_' -- Load plugins
 --
 -- TODO: Better light mode colors
 -- TODO: Better colorscheme for commandline nvim
--- TODO: Setup LSP for Python
 
 -- vim: ts=2 sts=2 sw=2 et
