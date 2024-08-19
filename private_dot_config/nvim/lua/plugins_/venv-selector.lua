@@ -16,16 +16,26 @@ return {
   config = function()
     require('venv-selector').setup {
       settings = {
-        --[[
+        -- Disable all but the venvs I use (pyenv, virtualenvs). List at:
+        -- https://github.com/linux-cultist/venv-selector.nvim/blob/regexp/lua/venv-selector/config.lua
         search = {
-          my_venvs = {
-            command = "fd '/bin/python$' --full-path  ~/.virtualenvs",
+          -- The default finds too many pythons
+          virtualenvs = {
+            command = "$FD '/bin/python$' ~/.virtualenvs --full-path --color never",
           },
+          hatch = false,
+          poetry = false,
+          pipenv = false,
+          anaconda_envs = false,
+          anaconda_base = false,
+          miniconda_envs = false,
+          miniconda_base = false,
+          pipx = false,
+          cwd = false,
+          workspace = false,
+          file = false,
         },
-        ]]
-        --
         options = {
-          -- notify_user_on_venv_activation = true,
           debug = true,
         },
       },
@@ -35,6 +45,8 @@ return {
     {
       '<LEADER>vs',
       '<cmd>VenvSelect<cr>',
+    },
+    {
       '<LEADER>vl',
       '<cmd>VenvSelectLog<cr>',
     },
