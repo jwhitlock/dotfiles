@@ -1,4 +1,10 @@
+# 2024-08: Previous configuration for nvim
 .config/nvim/lua/plugins_/cmp.lua
 .config/nvim/lua/plugins_/lsp.lua
 .config/nvim/lua/plugins_/treesitter.lua
 .config/nvim/lua/autocommands_.lua
+
+# 2024-08: Cleanup after bash
+.bash_history
+.bash_sessions
+.bash_profile

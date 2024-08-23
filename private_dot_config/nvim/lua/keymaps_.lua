@@ -31,8 +31,13 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Reload pylsp (for example, after loading venv
+-- Reload pylsp (for example, after loading venv)
 vim.keymap.set('n', '<leader>lr', function()
   vim.lsp.stop_client(vim.lsp.get_clients { name = 'pylsp' })
   vim.cmd 'edit'
 end, { desc = 'Reload pylsp' })
+-- Reload all LSPs
+vim.keymap.set('n', '<leader>lR', function()
+  vim.lsp.stop_client(vim.lsp.get_clients())
+  vim.cmd 'edit'
+end, { desc = 'Reload all LSPs' })

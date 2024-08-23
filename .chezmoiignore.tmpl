@@ -5,28 +5,37 @@
 .config/chezmoi  # Protected anyway
 .config/nvim/lazy-lock.json
 .config/mozilla
+.config/fish/completions  # Allow brew to stick completions here
 
 # Don't manage these in the home folder
 .CFUserTextEncoding
 .DS_Store
 .Trash
-.bash_history
 .cache
 .cups
 .docker
+.ipython
+.jupyter
 .lesshst
 .local
+.netrc
+.node_repl_history
 .npm
+.psql_history
 .pyenv
 .python_history
+.rediscli_history
+.sqlite_history
 .ssh
 .viminfo
 .virtualenvs
+.volta
 .vscode
 .wget-hsts
 .zsh_history
 .zsh_sessions
 Applications
+Databases
 Desktop
 Documents
 Downloads
@@ -46,6 +55,8 @@ windows
 src/*
 !src/.keep
 
+# Don't manage in any directory
+**/.DS_Store
 
 # Don't sync these in the chezmoi folder
 # This means exclusion patterns will be needed to track these in subfolders

@@ -9,4 +9,5 @@ extend-ignore-re = [
   " \\[[I]\\]nner ",
   " \\[R\\]eferences'",
   " \\[S\\]ymbols'",
+  "\\b*Wil\\s+Clouser\\b",
 ]
