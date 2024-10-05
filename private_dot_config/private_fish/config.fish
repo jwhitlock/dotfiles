@@ -34,7 +34,7 @@ if status is-interactive
     end
 
     set -gx VISUAL "$HOMEBREW_PREFIX/bin/vimr --wait"
-    set -gx EDITOR "$HOMEBREW_PREFIX/bin/vimr --wait"
+    set -gx EDITOR "$HOMEBREW_PREFIX/bin/nvim"
 
   end
 
