@@ -33,8 +33,8 @@ if status is-interactive
       "$HOMEBREW_PREFIX/bin/pyenv" init - | source
     end
 
-    set -gx VISUAL "$HOMEBREW_PREFIX/bin/mvim --nofork"
-    set -gx EDITOR "$HOMEBREW_PREFIX/bin/mvim -v --nofork"
+    set -gx VISUAL "$HOMEBREW_PREFIX/bin/vimr --wait"
+    set -gx EDITOR "$HOMEBREW_PREFIX/bin/vimr --wait"
 
   end
 
