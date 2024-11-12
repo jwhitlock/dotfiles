@@ -14,6 +14,9 @@
 -- https://github.com/crate-ci/typos
 -- https://github.com/tekumara/typos-lsp
 --
+--- Groovy (JenkinsFile) - groovy-language-server
+-- https://github.com/GroovyLanguageServer/groovy-language-server
+--
 ---- Dependencies
 --
 --- lsp-config
@@ -233,6 +236,7 @@ return {
         },
       },
       taplo = {},
+      groovyls = {},
     }
 
     --- Install python-lsp-server plugins in the same environment

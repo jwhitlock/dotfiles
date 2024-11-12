@@ -1,5 +1,6 @@
 [default.extend-identifiers]
 email_for_dne_subdomain = "email_for_dne_subdomain"
+KMS = "KMS"
 
 [default]
 extend-ignore-re = [
@@ -10,4 +11,6 @@ extend-ignore-re = [
   " \\[R\\]eferences'",
   " \\[S\\]ymbols'",
   "\\b*Wil\\s+Clouser\\b",
+  # fx-private-relay docs/workspace.json
+  "replys \\[sic\\]",
 ]
