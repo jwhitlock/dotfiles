@@ -29,6 +29,11 @@ if status is-interactive
       set -gx INFOPATH $BREW_INFOPATH $INFOPATH;
     end
 
+    if test -x "$HOMEBREW_PREFIX/bin/volta"
+      set -gx VOLTA_HOME "$HOME/.volta"
+      fish_add_path -m "$VOLTA_HOME/bin"
+    end
+
     if test -x "$HOMEBREW_PREFIX/bin/pyenv"
       "$HOMEBREW_PREFIX/bin/pyenv" init - | source
     end
@@ -36,11 +41,6 @@ if status is-interactive
     set -gx VISUAL "$HOMEBREW_PREFIX/bin/vimr --wait"
     set -gx EDITOR "$HOMEBREW_PREFIX/bin/nvim"
 
-  end
-
-  if test -x "$HOMEBREW_PREFIX/bin/volta"
-    set -gx VOLTA_HOME "$HOME/.volta"
-    fish_add_path "$VOLTA_HOME/bin"
   end
 
   # Google Cloud SDK
