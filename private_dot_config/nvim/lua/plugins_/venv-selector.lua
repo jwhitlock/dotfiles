@@ -21,7 +21,7 @@ return {
         search = {
           -- The default finds too many pythons
           virtualenvs = {
-            command = "$FD '/bin/python$' ~/.virtualenvs --full-path --color never",
+            command = "$FD 'bin/python$' ~/.virtualenvs --full-path --color never",
           },
           hatch = false,
           poetry = false,

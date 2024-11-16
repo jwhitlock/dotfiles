@@ -33,7 +33,7 @@ return {
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim',       opts = {} },
+    { 'j-hui/fidget.nvim', opts = {} },
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
 
@@ -156,13 +156,13 @@ return {
             local new_plug = overrides.pylsp.plugins
             local old_plug = client.settings.pylsp.plugins
             if
-                old_plug.jedi
-                and new_plug.jedi.environment == old_plug.jedi.environment
-                and old_plug.ruff
-                and new_plug.ruff.executable == old_plug.ruff.executable
-                and old_plug.mypy
-                and old_plug.mypy.overrides
-                and new_plug.mypy.overrides[2] == old_plug.mypy.overrides[2]
+              old_plug.jedi
+              and new_plug.jedi.environment == old_plug.jedi.environment
+              and old_plug.ruff
+              and new_plug.ruff.executable == old_plug.ruff.executable
+              and old_plug.mypy
+              and old_plug.mypy.overrides
+              and new_plug.mypy.overrides[2] == old_plug.mypy.overrides[2]
             then
               logger.info ' no changes to settings'
             else
@@ -250,27 +250,27 @@ return {
       local job = require 'plenary.job'
 
       job
-          :new({
-            command = venv .. '/bin/pip',
-            args = {
-              'install',
-              '-U',
-              '--disable-pip-version-check',
-              'pylsp-rope',
-              'python-lsp-black',
-              'pylsp-mypy',
-              'python-lsp-ruff',
-            },
-            cwd = venv,
-            env = { VIRTUAL_ENV = venv },
-            on_exit = function()
-              print 'Finished installing pylsp modules.'
-            end,
-            on_start = function()
-              print 'Installing pylsp modules...'
-            end,
-          })
-          :start()
+        :new({
+          command = venv .. '/bin/pip',
+          args = {
+            'install',
+            '-U',
+            '--disable-pip-version-check',
+            'pylsp-rope',
+            'python-lsp-black',
+            'pylsp-mypy',
+            'python-lsp-ruff',
+          },
+          cwd = venv,
+          env = { VIRTUAL_ENV = venv },
+          on_exit = function()
+            print 'Finished installing pylsp modules.'
+          end,
+          on_start = function()
+            print 'Installing pylsp modules...'
+          end,
+        })
+        :start()
     end
 
     -- Ensure the servers and tools above are installed
