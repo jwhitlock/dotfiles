@@ -1,7 +1,3 @@
-[default.extend-identifiers]
-email_for_dne_subdomain = "email_for_dne_subdomain"
-KMS = "KMS"
-
 [default]
 extend-ignore-re = [
   # nvim doc strings
@@ -10,7 +6,20 @@ extend-ignore-re = [
   " \\[[I]\\]nner ",
   " \\[R\\]eferences'",
   " \\[S\\]ymbols'",
-  "\\b*Wil\\s+Clouser\\b",
   # fx-private-relay docs/workspace.json
   "replys \\[sic\\]",
+]
+
+[default.extend-identifiers]
+KMS = "KMS"
+
+[type.py.extend-identifiers]
+email_for_dne_subdomain = "email_for_dne_subdomain"
+
+[type.md]
+extend-glob = ["*.md"]
+extend-ignore-re = [
+  # People
+  "\\b*Wil\\s+Clouser\\b",
+  "\\b*Lindsey\\s+Shepard\\b",
 ]
