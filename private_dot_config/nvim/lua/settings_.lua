@@ -107,3 +107,10 @@ if vim.g.gui_vimr then
 end
 vim.cmd 'colorscheme zellner'
 vim.cmd 'filetype plugin indent on'
+
+-- Disable some providers for clean healthcheck
+-- https://neovim.io/doc/user/provider.html
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
