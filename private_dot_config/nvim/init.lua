@@ -16,7 +16,6 @@ require 'lazy_' -- Load plugins
 -- TJ DeVries - The Only Video You Need to Get Started with Neovim
 --  https://youtu.be/m8C0Cq9Uv9o?si=Ldr7ZLzVVbz6uSdd
 --
--- TODO: Better light mode colors
 -- TODO: Better colorscheme for commandline nvim
 
 -- vim: ts=2 sts=2 sw=2 et

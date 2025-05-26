@@ -9,6 +9,9 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 local opt = vim.opt
 
+-- Save buffers when losing focus
+vim.g.autowrite = true
+
 -- Make line numbers default
 opt.number = true
 
@@ -114,3 +117,14 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- neovim 0.11
+-- LSP: https://gpanders.com/blog/whats-new-in-neovim-0-11/#lsp
+vim.lsp.enable {
+  'ts_ls',
+  'lua_ls',
+  'pylsp',
+  'typos_lsp',
+  'taplo',
+  'groovyls',
+}
