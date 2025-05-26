@@ -1,10 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR PIP_REQUIRE_VIRTUALENV:true
-{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" }}
+{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" "Greblock-Mini" }}
 SETUVAR __fish_initialized:3800
 {{- end }}
-{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" "Greblock-Mini" }}
+{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" }}
 SETUVAR __fish_initialized:3400
 {{- end }}
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
@@ -24,10 +24,10 @@ SETUVAR fish_color_operator:brcyan
 SETUVAR fish_color_param:cyan
 SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" }}
+{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" "Greblock-Mini" }}
 SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 {{- end }}
-{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" "Greblock-Mini" }}
+{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" }}
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 {{- end }}
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
