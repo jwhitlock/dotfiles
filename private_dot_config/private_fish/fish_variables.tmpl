@@ -1,12 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR PIP_REQUIRE_VIRTUALENV:true
-{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" "Greblock-Mini" }}
 SETUVAR __fish_initialized:3800
-{{- end }}
-{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" }}
-SETUVAR __fish_initialized:3400
-{{- end }}
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
@@ -24,12 +19,7 @@ SETUVAR fish_color_operator:brcyan
 SETUVAR fish_color_param:cyan
 SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-{{- if eq .chezmoi.hostname "jwhitlock-MB-M2" "Greblock-Mini" }}
 SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
-{{- end }}
-{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" }}
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
-{{- end }}
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
@@ -43,7 +33,7 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 {{- if eq .chezmoi.hostname "jwhitlock-MB-M2" }}
 SETUVAR fish_user_paths:/Users/john/\x2evolta/bin\x1e/Users/john/go/bin\x1e/opt/homebrew/opt/postgresql\x4014/bin\x1e/Users/john/bin\x1e/opt/homebrew/sbin\x1e/Users/john/src/taskcluster/node_modules/\x2ebin\x1e/Users/john/\x2epyenv/bin\x1e/Users/john/Library/Python/3\x2e9/bin\x1e/opt/homebrew/bin\x1e/Users/john/\x2elocal/bin
 {{- end }}
-{{- if eq .chezmoi.hostname "jwhitlock-mb-M1" "Mozilla-35787" }}
+{{- if eq .chezmoi.hostname "Mozilla-35787" }}
 SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/opt/homebrew/sbin
 {{- end }}
 {{- if eq .chezmoi.hostname "Greblock-Mini" }}
