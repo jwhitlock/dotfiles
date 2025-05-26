@@ -3,3 +3,6 @@
 .config/nvim/lua/plugins_/lsp.lua
 .config/nvim/lua/plugins_/treesitter.lua
 .config/nvim/lua/autocommands_.lua
+# 2025-05: nvim 0.11 upgrade
+.config/nvim/lua/plugins_/lunit-meta.lua
+.config/nvim/lua/plugins_/nvim-cmp.lua
