@@ -12,7 +12,6 @@ return {
     },
   },
   lazy = false,
-  branch = 'regexp', -- Use regexp branch, as suggested on the main page.
   config = function()
     require('venv-selector').setup {
       -- Disable all but the venvs I use (pyenv, virtualenvs). List at:
