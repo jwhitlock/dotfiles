@@ -8,6 +8,24 @@ extend-ignore-re = [
   " \\[S\\]ymbols'",
   # fx-private-relay docs/workspace.json
   "replys \\[sic\\]",
+  # monitor-scan-remove services/extraction/src/extraction/rules/onlinesearches_com.py
+  "\"North Dakota\": \"ND\",",
+  # monitor-scan-remove moscary-ts/src/scanner.ts
+  "ND: \"North Dakota\",",
+  # monitor-scan-remove services/extraction/src/extraction/rules/telephonedirectories_us.py
+  're\.match\(r\"\^\[0\-9\]\+\(\?:st\|nd\|rd\|th\)\$\",',
+  # monitor-scan-remove services/extraction/tests/rules/data/peoplesearch.com/expected_anon.json
+  "\"city\": \"Mena\",",
+  # monitor-scan-remove services/extraction/tests/rules/data/peoplewhiz.com/expected_anon.json
+  "jean cancell sanchez",
+  # monitor-scan-remove services/extraction/tests/rules/data/ussearch.com/expected_anon.json
+  "Tung Pascual",
+]
+
+[files]
+extend-exclude = [
+  # monitor-scan-remove
+  "services/extraction/tests/rules/data/*/input_anon_stripped.html"
 ]
 
 [default.extend-identifiers]
