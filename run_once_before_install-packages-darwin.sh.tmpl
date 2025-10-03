@@ -87,7 +87,7 @@ brew "kubernetes-cli"
 {{- if .forPersonal }}
 {{- end }}
 
-{{- if .forPersonal .forMozilla }}
+{{- if or (.forPersonal .forMozilla) }}
 brew "awscli"
 brew "graphviz"
 {{- end }}
