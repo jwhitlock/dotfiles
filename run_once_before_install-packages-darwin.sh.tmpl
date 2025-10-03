@@ -1,7 +1,15 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 set -e
+brew uninstall --cask $1 || echo "👍 $1 not brew installed"
 brew bundle --no-lock --file=/dev/stdin <<EOF
+function uninstall {
+  brew uninstall $1 || echo "👍 $1 not brew installed"
+}
+function uninstall_cask {
+  brew uninstall --cask $1 || echo "👍 $1 not brew installed"
+}
+
 #
 # Taps
 #
@@ -12,8 +20,8 @@ tap "homebrew/services"
 tap "heroku/brew"
 {{- end }}
 
-{{- if .forPersonal }}
-{{- end }}
+uninstall macvim
+uninstall terraform
 
 #
 # Brews
@@ -21,23 +29,32 @@ tap "heroku/brew"
 brew "ack"
 brew "black"
 brew "chezmoi"
+brew "csvkit"
+brew "dhex"
 brew "dos2unix"
+brew "ffmpeg"
 brew "fish"
 brew "gh"
 brew "gnupg"
 brew "hub"
 brew "jq"
-brew "virtualfish"
 brew "jupyterlab"
-brew "macvim"
 brew "magic-wormhole"
+brew "ollama"
+brew "perl"  # For ack
 brew "pinentry-mac"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "python3"
-brew "starship"
 brew "rust"
+brew "shellcheck"
+brew "starship"
+brew "tfenv"
+brew "typos-cli"
+brew "uv"
+brew "virtualfish"
 brew "wget"
+brew "yq"
 
 # Neovim
 brew "neovim"
@@ -49,20 +66,30 @@ brew "openjdk"
 brew "ripgrep"
 
 {{- if .forMozilla }}
-# fx-private-relay
+# fx-private-relay, monitor
 brew "circleci"
 brew "heroku/brew/heroku"
+brew "nvm"
+brew "optipng"
 brew "postgresql@14"
 brew "redis"
+brew "structurizr-cli"
 brew "telnet"
 brew "volta"
 
 # sre
-brew "awscli"
+brew "age"
 brew "helm"
+brew "go"
+brew "kubernetes-cli"
 {{- end }}
 
 {{- if .forPersonal }}
+{{- end }}
+
+{{- if .forPersonal .forMozilla }}
+brew "awscli"
+brew "graphviz"
 {{- end }}
 
 #
@@ -108,18 +135,4 @@ cask "ubiquiti-unifi-controller"
 cask "vlc"
 {{- end }}
 EOF
-
-# echo "Uninstalling homebrew casks, prefer App Store"
-
-function uninstall {
-  brew uninstall --cask $1 || echo "👍 $1 not brew installed"
-}
-
-# uninstall daisydisk
-# uninstall soulver
-# uninstall synalyze-it-pro
-
-# uninstall unity
-# uninstall unity-webgl-support-for-editor
-
 {{ end -}}
