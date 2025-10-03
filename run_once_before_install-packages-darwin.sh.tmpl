@@ -1,27 +1,25 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 set -e
-brew uninstall --cask $1 || echo "👍 $1 not brew installed"
-brew bundle --no-lock --file=/dev/stdin <<EOF
+
 function uninstall {
   brew uninstall $1 || echo "👍 $1 not brew installed"
 }
 function uninstall_cask {
   brew uninstall --cask $1 || echo "👍 $1 not brew installed"
 }
+uninstall macvim
+uninstall terraform
 
+brew bundle install --file=/dev/stdin <<EOF
 #
 # Taps
 #
-tap "homebrew/bundle"
-tap "homebrew/services"
 
 {{- if .forMozilla }}
 tap "heroku/brew"
 {{- end }}
 
-uninstall macvim
-uninstall terraform
 
 #
 # Brews
@@ -97,11 +95,10 @@ brew "graphviz"
 #
 cask "1password"
 cask "1password-cli"
-cask "docker"
+cask "docker-desktop"
 cask "firefox"
 cask "keybase"
-cask "marked"
-cask "omnifocus"
+cask "marked-app"
 cask "rescuetime"
 cask "shiftit"
 cask "slack"
@@ -134,5 +131,6 @@ cask "metaz"
 cask "ubiquiti-unifi-controller"
 cask "vlc"
 {{- end }}
+
 EOF
 {{ end -}}
