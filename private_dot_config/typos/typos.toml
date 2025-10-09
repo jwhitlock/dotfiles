@@ -20,12 +20,30 @@ extend-ignore-re = [
   "jean cancell sanchez",
   # monitor-scan-remove services/extraction/tests/rules/data/ussearch.com/expected_anon.json
   "Tung Pascual",
+  # fx-private-relay
+  "sos[ _]accessoire",
+  "f\"PN\\{",
+  "\"bs-ba,",
+  "\"BA\"",
+  "ba!ng",
+  "[\"e]_1NOO[TKE]",
+  "eNDEjvC\"",
 ]
 
 [files]
 extend-exclude = [
   # monitor-scan-remove
-  "services/extraction/tests/rules/data/*/input_anon_stripped.html"
+  "services/extraction/tests/rules/data/*/input_anon_stripped.html",
+  # fx-private-relay
+  "frontend/src/*",
+  "frontend/__mocks__/*",
+  "emails/migrations/*.py",
+  "emails/tests/fixtures/*.json",
+  "emails/tests/fixtures/*.email",
+  "emails/blocklist.text",
+  "emails/badwords.text",
+  "privaterelay/fxrelay-allowlist-domains.txt",
+  "phones/migrations/*.py",
 ]
 
 [default.extend-identifiers]
@@ -33,6 +51,10 @@ KMS = "KMS"
 
 [type.py.extend-identifiers]
 email_for_dne_subdomain = "email_for_dne_subdomain"
+test_get_keys_from_headers_references_reply_dne = "test_get_keys_from_headers_references_reply_dne"
+1aa8606ede8415d8 = "1aa8606ede8415d8"
+_pn_return = "_pn_return"
+pn = "pn"
 
 [type.md]
 extend-glob = ["*.md"]
@@ -41,3 +63,7 @@ extend-ignore-re = [
   "\\b*Wil\\s+Clouser\\b",
   "\\b*Lindsey\\s+Shepard\\b",
 ]
+
+[type.fluent]
+extend-glob = ["*.ftl"]
+check-file = false
