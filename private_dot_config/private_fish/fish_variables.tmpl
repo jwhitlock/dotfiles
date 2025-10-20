@@ -30,7 +30,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-{{- if eq .chezmoi.hostname "jwhitlock-mb-m2" }}
+{{- if eq (lower .chezmoi.hostname) "jwhitlock-mb-m2" }}
 SETUVAR fish_user_paths:/Users/john/\x2evolta/bin\x1e/Users/john/Library/pnpm\x1e/Users/john/go/bin\x1e/opt/homebrew/opt/postgresql\x4014/bin\x1e/Users/john/bin\x1e/opt/homebrew/sbin\x1e/Users/john/src/taskcluster/node_modules/\x2ebin\x1e/Users/john/\x2epyenv/bin\x1e/Users/john/Library/Python/3\x2e9/bin\x1e/opt/homebrew/bin\x1e/Users/john/\x2elocal/bin
 {{- end }}
 {{- if eq .chezmoi.hostname "Mozilla-35787" }}
