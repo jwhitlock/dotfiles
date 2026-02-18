@@ -11,45 +11,45 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
-    { 'j-hui/fidget.nvim',    opts = {} },
+    { 'j-hui/fidget.nvim', opts = {} },
 
     -- Allows extra capabilities provided by blink.cmp
     'saghen/blink.cmp',
   },
   config = function()
-    require("mason").setup()
-    require("mason-tool-installer").setup {
+    require('mason').setup()
+    require('mason-tool-installer').setup {
       ensure_installed = {
         -- Lua
         -- https://luals.github.io/
-        "lua_ls",
-        "stylua", -- Formats lua code
+        'lua_ls',
+        'stylua', -- Formats lua code
 
         -- Typescript
-        "ts_ls",
+        'ts_ls',
 
         -- Python
         -- https://github.com/python-lsp/python-lsp-server
-        "pylsp",
+        'pylsp',
 
         -- Spelling
         -- https://github.com/crate-ci/typos
         -- https://github.com/tekumara/typos-lsp
-        "typos_lsp",
+        'typos_lsp',
 
         -- TOML
-        "taplo",
+        'taplo',
 
         -- Groovy (JenkinsFile)
         -- https://github.com/GroovyLanguageServer/groovy-language-server
-        "groovyls",
+        -- "groovyls",
       },
     }
-    require("mason-lspconfig").setup {
+    require('mason-lspconfig').setup {
       automatic_enable = false,
-      ensure_installed = {}
+      ensure_installed = {},
     }
-  end
+  end,
 }
 
 -- vim: ts=2 sts=2 sw=2 et
