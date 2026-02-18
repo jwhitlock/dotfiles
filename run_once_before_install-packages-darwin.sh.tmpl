@@ -8,8 +8,6 @@ function uninstall {
 function uninstall_cask {
   brew uninstall --cask $1 || echo "👍 $1 not brew installed"
 }
-uninstall macvim
-uninstall terraform
 
 brew bundle install --file=/dev/stdin <<EOF
 #
