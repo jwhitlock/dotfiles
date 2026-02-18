@@ -1,3 +1,4 @@
+{{- $machineName := promptStringOnce . "machineName" "Machine name for templates" "unknown" -}}
 {{- $forFamilyComputer := promptBoolOnce . "forFamilyComputer" "Install for family computer" false -}}
 {{- $forMozilla := promptBoolOnce . "forMozilla" "Install for Mozilla development" false -}}
 {{- $forPersonal := promptBoolOnce . "forPersonal" "Install for personal use" false -}}
@@ -7,6 +8,7 @@
     command = "fish"
 
 [data]
+    machineName = {{ $machineName | quote }}
     forFamilyComputer = {{ $forFamilyComputer }}
     forMozilla = {{ $forMozilla }}
     forPersonal = {{ $forPersonal }}
