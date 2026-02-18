@@ -126,5 +126,4 @@ vim.lsp.enable {
   'pylsp',
   'typos_lsp',
   'taplo',
-  'groovyls',
 }
