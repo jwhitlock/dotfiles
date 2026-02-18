@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR PIP_REQUIRE_VIRTUALENV:true
 SETUVAR __fish_initialized:4300
-{{- if eq (lower .chezmoi.hostname) "johns-macbook-m2-pro" }}
+{{- if eq .machineName "jwhitlock-mb-m2" }}
 SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/opt/homebrew/sbin
 {{- end }}
 {{- if eq .machineName "jwhitlock-mb-m1" }}
