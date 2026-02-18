@@ -1,6 +1,7 @@
 {{- $forFamilyComputer := promptBoolOnce . "forFamilyComputer" "Install for family computer" false -}}
 {{- $forMozilla := promptBoolOnce . "forMozilla" "Install for Mozilla development" false -}}
 {{- $forPersonal := promptBoolOnce . "forPersonal" "Install for personal use" false -}}
+{{- $forDockware := promptBoolOnce . "forDockware" "Install for Dockware development" false -}}
 
 [cd]
     command = "fish"
@@ -9,6 +10,7 @@
     forFamilyComputer = {{ $forFamilyComputer }}
     forMozilla = {{ $forMozilla }}
     forPersonal = {{ $forPersonal }}
+    forDockware = {{ $forDockware }}
 
 {{- $github_email := promptStringOnce . "github.email" "GitHub Email address" "286017+jwhitlock@users.noreply.github.com" -}}
 {{- $github_signingkey := promptStringOnce . "github.signingkey" "GitHub Signing Key" "22E44A90025A75DB" }}
