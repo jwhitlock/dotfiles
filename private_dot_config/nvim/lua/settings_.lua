@@ -127,3 +127,18 @@ vim.lsp.enable {
   'typos_lsp',
   'taplo',
 }
+
+-- Autosave when losing focus
+-- Based on https://github.com/nyngwang/suave.lua/blob/main/lua/suave/utils/autocmd.lua
+-- Has an override for "don't save this filetype"
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+  group = vim.api.nvim_create_augroup('jw-autosave', { clear = true }),
+  pattern = '*',
+  callback = function()
+    if vim.bo.readonly or vim.api.nvim_buf_get_name(0) == '' or vim.bo.buftype ~= '' or not (vim.bo.modifiable and vim.bo.modified) then
+      return
+    end
+    vim.cmd 'silent w'
+    vim.cmd 'doau BufWritePost'
+  end,
+})
