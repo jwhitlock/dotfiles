@@ -114,6 +114,10 @@ cask "reflector"
 cask "zoom"
 {{- end }}
 
+{{- if .forDockware }}
+cask "bitwarden"
+{{- end }}
+
 {{- if .forPersonal }}
 cask "minecraft"
 cask "steam"
