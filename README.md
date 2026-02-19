@@ -28,3 +28,5 @@ Manual stuff after running:
 * Add sections for new `machineName`, mostly to the fish paths
 * `sudo vi /etc/shells`, add fish `/opt/homebrew/bin/fish`
 * `chsh -s /opt/homebrew/bin/fish`
+* Safari: Add extensions for 1Password, OmSave
+* Safari: Preferences Advanced, Show Features for Web Developers
