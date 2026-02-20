@@ -30,3 +30,5 @@ Manual stuff after running:
 * `chsh -s /opt/homebrew/bin/fish`
 * Safari: Add extensions for 1Password, OmSave
 * Safari: Preferences Advanced, Show Features for Web Developers
+* Ollama - `brew services start ollama`, then `ask_deepseek` to start downloading the model
+* Docker Desktop - Run, skip email. Under Settings /General, install the fish completions
