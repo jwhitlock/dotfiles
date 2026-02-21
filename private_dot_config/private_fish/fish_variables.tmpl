@@ -8,6 +8,6 @@ SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/opt/homebrew/sbin
 {{- if eq .machineName "jwhitlock-mb-m1" }}
 SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/opt/homebrew/sbin
 {{- end }}
-{{- if eq .chezmoi.hostname "Greblock-Mini" }}
+{{- if eq .machineName "greblock-mm-m2" }}
 SETUVAR fish_user_paths:/Applications/Wine\x20Stable\x2eapp/Contents/Resources/wine/bin\x1e/Applications/Wine\x20Stable\x2eapp/Contents/Resources/start/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin
 {{- end }}
