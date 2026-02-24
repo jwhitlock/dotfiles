@@ -63,6 +63,32 @@ brew "luarocks"
 brew "openjdk"
 brew "ripgrep"
 
+{{- if .forDockware }}
+# ROS 2
+brew "asio"
+brew "assimp"
+brew "bison"
+brew "bullet"
+brew "cmake"
+brew "console_bridge"
+brew "cppcheck"
+brew "cunit"
+brew "eigen"
+brew "freetype"
+brew "graphviz"
+brew "opencv"
+brew "openssl"
+brew "orocos-kdl"
+brew "pcre"
+brew "poco"
+brew "pyqt@5"
+brew "python"
+brew "qt@5"
+brew "sip"
+brew "spdlog"
+brew "tinyxml2"
+{{- end }}
+
 {{- if .forMozilla }}
 # fx-private-relay, monitor
 brew "circleci"
@@ -116,7 +142,6 @@ cask "zoom"
 
 {{- if .forDockware }}
 cask "bitwarden"
-cask "cmake"
 cask "microsoft-teams"
 cask "xquartz"
 {{- end }}
