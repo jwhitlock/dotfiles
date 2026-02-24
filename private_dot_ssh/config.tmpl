@@ -1,0 +1,7 @@
+# Config common to all ssh installs
+{{ join .chezmoi.sourceDir ".ssh_config.all.encrypted.txt" | include | decrypt }}
+
+{{- if .forDockware }}
+# Config for Dockware development
+{{ join .chezmoi.sourceDir ".ssh_config.dockware.encrypted.txt" | include | decrypt }}
+{{- end }}
