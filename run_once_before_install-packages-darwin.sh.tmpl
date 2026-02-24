@@ -161,6 +161,10 @@ cask "handbrake-app"
 cask "makemkv"
 cask "metaz"
 cask "ubiquiti-unifi-controller"
+{{- end }}
+
+
+{{- if (or .forPersonal .forDockware ) }}
 cask "vlc"
 {{- end }}
 
