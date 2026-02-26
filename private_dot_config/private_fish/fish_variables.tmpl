@@ -3,7 +3,7 @@
 SETUVAR PIP_REQUIRE_VIRTUALENV:true
 SETUVAR __fish_initialized:4300
 {{- if eq .machineName "jwhitlock-mb-m2" }}
-SETUVAR fish_user_paths:/opt/homebrew/opt/qt\x405/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew/sbin
+SETUVAR fish_user_paths:{{ .chezmoi.homeDir }}/\x2elocal/bin\x1e/opt/homebrew/opt/qt\x405/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew/sbin
 {{- end }}
 {{- if eq .machineName "jwhitlock-mb-m1" }}
 SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/opt/homebrew/sbin
