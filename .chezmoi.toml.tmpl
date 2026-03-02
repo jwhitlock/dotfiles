@@ -1,4 +1,5 @@
 {{- $machineName := promptStringOnce . "machineName" "Machine name for templates" "unknown" -}}
+{{- $machinePubKey := promptStringOnce . "machinePubKey" "SSH public key for this machine" "unknown" -}}
 {{- $forFamilyComputer := promptBoolOnce . "forFamilyComputer" "Install for family computer" false -}}
 {{- $forMozilla := promptBoolOnce . "forMozilla" "Install for Mozilla development" false -}}
 {{- $forPersonal := promptBoolOnce . "forPersonal" "Install for personal use" false -}}
@@ -15,6 +16,7 @@ encryption = "age"
 
 [data]
     machineName = {{ $machineName | quote }}
+    machinePubKey = {{ $machinePubKey | quote }}
     forFamilyComputer = {{ $forFamilyComputer }}
     forMozilla = {{ $forMozilla }}
     forPersonal = {{ $forPersonal }}
