@@ -136,12 +136,11 @@ cask "sourcetree"
 cask "textexpander"
 cask "vimr"
 cask "font-meslo-lg-nerd-font"  # MesloLGS Nerd Font Propo
+cask "zoom"
 
 {{- if .forMozilla }}
 cask "element"
-cask "google-chrome"
 cask "reflector"
-cask "zoom"
 {{- end }}
 
 {{- if .forDockware }}
@@ -167,7 +166,6 @@ cask "handbrake-app"
 cask "makemkv"
 cask "metaz"
 {{- end }}
-
 
 {{- if (or .forPersonal .forDockware ) }}
 cask "vlc"
