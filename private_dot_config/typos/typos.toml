@@ -48,6 +48,8 @@ extend-exclude = [
 
 [default.extend-identifiers]
 KMS = "KMS"
+# Dockware
+jOISGc = "jOISGc"
 
 [type.py.extend-identifiers]
 email_for_dne_subdomain = "email_for_dne_subdomain"
