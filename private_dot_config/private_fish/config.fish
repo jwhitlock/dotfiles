@@ -53,4 +53,5 @@ if status is-interactive
   end
 end
 
+set -g fish_key_bindings fish_vi_key_bindings
 fish_add_path --append "$HOME/.local/bin"
