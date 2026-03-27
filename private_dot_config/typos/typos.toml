@@ -64,7 +64,18 @@ extend-ignore-re = [
   # People
   "\\b*Wil\\s+Clouser\\b",
   "\\b*Lindsey\\s+Shepard\\b",
+  # Dockware
+  "\\[vist#0:0/",
+  "2C:01:0B:00:17:BA",
 ]
+
+[type.md.extend-words]
+# Dockware
+INEX = "INEX"
+
+[type.md.extend-identifiers]
+# Dockware
+ENV9674_2C010B0017BA = "ENV9674_2C010B0017BA"
 
 [type.fluent]
 extend-glob = ["*.ftl"]
