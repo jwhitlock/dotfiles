@@ -5,7 +5,8 @@
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
-  branch = '0.1.x',
+  version = '*',
+  -- branch = '0.1.x',
   dependencies = {
     -- TJ DeVries Lua functions
     -- https://github.com/nvim-lua/plenary.nvim
