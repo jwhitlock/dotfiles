@@ -34,3 +34,4 @@ Manual stuff after running:
 * Docker Desktop - Run, skip email. Under Settings /General, install the fish completions
 * In App Store, install XCode
 * System Preferences, Customize Modifier Keys: Change Caps Lock to ^ Control (for each keyboard)
+* Setup Hammerspoon: `open -a Hammerspoon`, check that config works, enable Accessibility
