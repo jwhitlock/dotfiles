@@ -61,3 +61,8 @@ src/*
 # This means exclusion patterns will be needed to track these in subfolders
 README.md
 LICENSE
+
+{{- if not .forDockware }}
+.ssh/id_rsa.azure
+.ssh/id_rsa.portal_images
+{{- end }}
