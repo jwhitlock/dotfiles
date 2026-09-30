@@ -50,6 +50,8 @@ extend-exclude = [
 KMS = "KMS"
 # Dockware
 jOISGc = "jOISGc"
+AGS = "AGS"
+portalVerson = "portalVerson"
 
 [type.py.extend-identifiers]
 email_for_dne_subdomain = "email_for_dne_subdomain"
@@ -57,6 +59,13 @@ test_get_keys_from_headers_references_reply_dne = "test_get_keys_from_headers_re
 1aa8606ede8415d8 = "1aa8606ede8415d8"
 _pn_return = "_pn_return"
 pn = "pn"
+on_truck_ags_event = "on_truck_ags_event"
+TruckAgsEvent = "TruckAgsEvent"
+TRUCK_AGS_EVENT_QOS = "TRUCK_AGS_EVENT_QOS"
+truck_ags_event_callback = "truck_ags_event_callback"
+TruckAgsEventCallback = "TruckAgsEventCallback"
+drop_truck_ags_event = "drop_truck_ags_event"
+TruckAgsEventCallbackFixture = "TruckAgsEventCallbackFixture"
 
 [type.md]
 extend-glob = ["*.md"]
@@ -76,6 +85,7 @@ INEX = "INEX"
 [type.md.extend-identifiers]
 # Dockware
 ENV9674_2C010B0017BA = "ENV9674_2C010B0017BA"
+tiny_ags = "tiny_ags"
 
 [type.fluent]
 extend-glob = ["*.ftl"]
