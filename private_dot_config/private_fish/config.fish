@@ -50,6 +50,11 @@ if status is-interactive
     . "$HOME/google-cloud-sdk/path.fish.inc"
   end
 
+  # Docker Desktop
+  if test -f "$HOME/.docker/bin"
+    fish_add_path -m "$HOME/.docker/bin"
+  end
+
   if test -x "$HOMEBREW_PREFIX/bin/starship"
     starship init fish | source
   end
