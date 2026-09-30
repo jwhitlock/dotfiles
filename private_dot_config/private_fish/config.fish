@@ -1,5 +1,7 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
+  set -gx BROWSER "open -a Safari"
+
   if test -x /opt/homebrew/bin/brew
     # MacOS, ARM
     set -gx HOMEBREW_PREFIX "/opt/homebrew"
